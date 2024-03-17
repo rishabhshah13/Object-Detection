@@ -1,0 +1,10 @@
+names:
+- Nothing
+- Drinks
+- Utensils
+- Laptop
+nc: 4
+path: ..
+test: /Users/rishabhshah/Desktop/AIPI590/Project2/trainingsplit/images/test
+train: /Users/rishabhshah/Desktop/AIPI590/Project2/trainingsplit/images/train
+val: /Users/rishabhshah/Desktop/AIPI590/Project2/trainingsplit/images/val

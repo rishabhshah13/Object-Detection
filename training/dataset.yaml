@@ -1,0 +1,9 @@
+names:
+- Nothing
+- Drinks
+- Utensils
+- Laptop
+nc: 4
+path: ..
+train: training/images
+val: training/images
