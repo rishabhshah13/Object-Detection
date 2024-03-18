@@ -14,6 +14,10 @@ Download the datasets from CVAT in COCO 1.1 format for the following classes:
 - Utensils
 - Laptops
 
+Instructions to download the dataset
+
+Run `python download.py --download_data True`
+
 The files will be named `instances_default.json` for each class. Change the categories as specified in the instructions and merge the datasets using the following commands:
 
 ```bash
@@ -21,10 +25,11 @@ python -m COCO_merger.merge --src "/path/to/drinks_instances_default.json" "/pat
 python -m COCO_merger.merge --src "/path/to/output.json" "/path/to/laptops_instances_default.json" --out "/path/to/output.json"
 ```
 
+
 ### 1.2. Annotations and Images
 
-- Annotations: `/path/to/output.json`
-- Images: `/path/to/MergeDataset/train`
+- Annotations: `COCOAnnotations`
+- Images: `/MergedDataset`
 
 ### 1.3. Dataset Splitting
 

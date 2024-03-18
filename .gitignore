@@ -167,3 +167,4 @@ runs/*
 models/*
 Dataset/*
 MergeDataset/*
+__MACOSX/*
