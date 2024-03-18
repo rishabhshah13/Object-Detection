@@ -1,8 +1,0 @@
-names:
-- Drinks
-- Utensils
-- Laptop
-nc: 3
-path: ..
-train: training\images
-val: training\images
