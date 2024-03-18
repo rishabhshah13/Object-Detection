@@ -1,9 +1,8 @@
 names:
-- Nothing
 - Drinks
 - Utensils
 - Laptop
-nc: 4
+nc: 3
 path: ..
-train: training/images
-val: training/images
+train: training\images
+val: training\images

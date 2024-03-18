@@ -1,0 +1,10 @@
+names:
+- Nothing
+- Drinks
+- Utensils
+- Laptop
+nc: 4
+path: C:\\Users\\rs659\\Desktop\\Object-Detection\\YOLO_dataset\\
+test: C:\\Users\\rs659\\Desktop\\Object-Detection\\YOLO_dataset\\images\\test
+train: C:\\Users\\rs659\\Desktop\\Object-Detection\\YOLO_dataset\\images\\train
+val: C:\\Users\\rs659\\Desktop\\Object-Detection\\YOLO_dataset\\images\\test

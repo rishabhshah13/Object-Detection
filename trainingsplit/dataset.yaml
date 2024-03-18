@@ -4,7 +4,7 @@ names:
 - Utensils
 - Laptop
 nc: 4
-path: ..
-test: /Users/rishabhshah/Desktop/AIPI590/Project2/trainingsplit/images/test
-train: /Users/rishabhshah/Desktop/AIPI590/Project2/trainingsplit/images/train
-val: /Users/rishabhshah/Desktop/AIPI590/Project2/trainingsplit/images/val
+path: C:\\Users\\rs659\\Desktop\\Object-Detection\\trainingsplit\\
+test: C:\\Users\\rs659\\Desktop\\Object-Detection\\trainingsplit\\images\\test
+train: C:\\Users\\rs659\\Desktop\\Object-Detection\\trainingsplit\\images\\train
+val: C:\\Users\\rs659\\Desktop\\Object-Detection\\trainingsplit\\images\\val

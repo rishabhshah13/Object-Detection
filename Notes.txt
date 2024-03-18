@@ -1,0 +1,135 @@
+1. Faster RCNN -- Detectron2
+Detectron2.ipynb - for a single dataset
+Detectron2Multiple.ipynb - for all the classes in the dataset
+
+Create dataset
+
+Download these from CVAT. In COCO 1.1 Format
+1. rishabh13proj@gmail.com -- drinks
+2. rishabhshah1998@gmail.com -- utensils
+3. rishabhshah13@gmail.com -- laptops
+
+The file will be instances_default.json for each
+
+
+Change categories to this and make necessary changes
+"categories": [
+    {
+        "id": 1,
+        "name": "Drinks",
+        "supercategory": ""
+    },
+    {
+        "id": 2,
+        "name": "Utensils",
+        "supercategory": ""
+    },
+    {
+        "id": 3,
+        "name": "Laptop",
+        "supercategory": ""
+    },
+    {
+        "id": 4,
+        "name": "wine glass",
+        "supercategory": ""
+    },
+    {
+        "id": 5,
+        "name": "bottle",
+        "supercategory": ""
+    },
+    {
+        "id": 6,
+        "name": "cup",
+        "supercategory": ""
+    },
+    {
+        "id": 7,
+        "name": "fork",
+        "supercategory": ""
+    },
+    {
+        "id": 8,
+        "name": "knife",
+        "supercategory": ""
+    },
+    {
+        "id": 9,
+        "name": "spoon",
+        "supercategory": ""
+    },
+    {
+        "id": 10,
+        "name": "bowl",
+        "supercategory": ""
+    },
+    {
+        "id": 11,
+        "name": "laptop",
+        "supercategory": ""
+    }
+]
+
+
+Run these one by one 
+python -m COCO_merger.merge --src "/Users/rishabhshah/Desktop/AIPI590/Project2/DatasetDetectron2/annotations/drinks_instances_default.json" "/Users/rishabhshah/Desktop/AIPI590/Project2/DatasetDetectron2/annotations/utensils_instances_default.json"  --out "/Users/rishabhshah/Desktop/AIPI590/Project2/DatasetDetectron2/annotations/output.json"
+
+python -m COCO_merger.merge --src "/Users/rishabhshah/Desktop/AIPI590/Project2/DatasetDetectron2/annotations/output.json" "/Users/rishabhshah/Desktop/AIPI590/Project2/DatasetDetectron2/annotations/laptops_instances_default.json" --out "/Users/rishabhshah/Desktop/AIPI590/Project2/DatasetDetectron2/annotations/output.json"
+
+Annoations -- DatasetDetectron2/output.json
+Images -- MergeDataset\train
+
+Split the dataset 
+python cocosplit.py --having-annotations --multi-class -s 0.8 DatasetDetectron2/annotations/output.json DatasetDetectron2/annotations/train.json DatasetDetectron2/annotations/test.json
+
+
+
+
+2. YOLO
+
+Run the cells it will create dataset from FasterRCNN one
+
+and train it
+This has a train/test/val split
+
+
+
+names:
+- Nothing
+- Drinks
+- Utensils
+- Laptop
+nc: 4
+
+path: ..
+train: YOLO_dataset\train_images
+val: YOLO_dataset\test_images
+
+
+Windows Installation
+# conda create --prefix "C:\\Users\\rs659\\Desktop\\Object-Detection\\wincondaprojenv" python=3.9
+# conda activate "C:\\Users\\rs659\\Desktop\\Object-Detection\\wincondaprojenv"
+# pip install cython
+# pip install numpy==1.23.5
+# pip install torch==2.1.0 torchvision==0.16.0 torchaudio==2.1.0 --index-url https://download.pytorch.org/whl/cu121
+# pip install git+https://github.com/philferriere/cocoapi.git#subdirectory=PythonAPI
+# pip install ninja
+# pip install ultralytics
+# pip install pillow
+# pip install pylabel
+# pip install kiwisolver
+# pip install git+https://github.com/facebookresearch/detectron2.git
+# git clone https://github.com/facebookresearch/detectron2.git
+# python -m pip install -e detectron2
+# pip install opencv-python
+
+
+MacOS Installation
+python3 -m venv proj2env
+source proj2env/bin/activate
+pip install --upgrade pip
+pip install torch
+pip install torchvision
+pip install pybind11
+brew install pybind11
