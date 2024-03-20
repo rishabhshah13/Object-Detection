@@ -63,17 +63,33 @@ Configure the dataset with the following details:
 ### Windows
 
 ```bash
+
+# For all at once (WORKS!)
 conda create --prefix "C:\\Users\\rs659\\Desktop\\Object-Detection\\wincondaprojenv" python=3.9
 conda activate "C:\\Users\\rs659\\Desktop\\Object-Detection\\wincondaprojenv"
-pip install cython
+pip install cython==3.0.9 numpy==1.23.5 ninja ultralytics==8.1.29 pillow pylabel==0.1.55 kiwisolver==1.4.5 pandas==2.2.1
+pip install torch==2.1.0 torchvision==0.16.0 torchaudio==2.1.0 --index-url https://download.pytorch.org/whl/cu121
+pip install git+https://github.com/philferriere/cocoapi.git#subdirectory=PythonAPI
+pip install git+https://github.com/facebookresearch/detectron2.git
+
+# For yaml file
+conda env create -f environment.yml
+conda activate object-detection-env
+
+
+# For custom installation
+conda create --prefix "C:\\Users\\rs659\\Desktop\\Object-Detection\\wincondaprojenv" python=3.9
+conda activate "C:\\Users\\rs659\\Desktop\\Object-Detection\\wincondaprojenv"
+pip install cython==3.0.9
 pip install numpy==1.23.5
 pip install torch==2.1.0 torchvision==0.16.0 torchaudio==2.1.0 --index-url https://download.pytorch.org/whl/cu121
 pip install git+https://github.com/philferriere/cocoapi.git#subdirectory=PythonAPI
 pip install ninja
-pip install ultralytics
+pip install ultralytics==8.1.29
 pip install pillow
-pip install pylabel
-pip install kiwisolver
+pip install pylabel==0.1.55
+pip install kiwisolver==1.4.5
+pip install pandas==2.2.1
 pip install git+https://github.com/facebookresearch/detectron2.git
 git clone https://github.com/facebookresearch/detectron2.git
 python -m pip install -e detectron2

@@ -1,0 +1,22 @@
+name: object-detection-env
+prefix: .
+channels:
+  - pytorch
+  - defaults
+dependencies:
+  - python=3.9
+  - pip
+  - cython==3.0.9
+  - numpy==1.23.5
+  - pytorch==2.1.0
+  - torchvision==0.16.0
+  - torchaudio==2.1.0
+  - pip:
+    - git+https://github.com/philferriere/cocoapi.git#subdirectory=PythonAPI==2.0.7
+    - ninja
+    - ultralytics==8.1.29
+    - pillow
+    - pylabel
+    - kiwisolver
+    - opencv-python==4.9.0.80
+    - git+https://github.com/facebookresearch/detectron2.git@cc9266c2396d5545315e3601027ba4bc28e8c95b
