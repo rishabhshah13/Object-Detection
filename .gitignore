@@ -168,3 +168,8 @@ models/*
 Dataset/*
 MergeDataset/*
 __MACOSX/*
+/COCOAnnotations/*
+/YOLO_dataset/*
+/saved_models/*
+yolov*.pt
+ObjectDetectionDataset.zip
