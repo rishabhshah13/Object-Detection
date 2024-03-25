@@ -6,7 +6,6 @@ import argparse
 def main(args):
     # Download raw data
     if args.download_data and not os.path.exists('ObjectDetectionDataset.zip'):
-        # https://drive.google.com/file/d/1Ljjye8lyZHs6vzSLlx-fDlxbix8Nf3-w/view?usp=sharing
         output = "ObjectDetectionDataset.zip"
         id = "1Ljjye8lyZHs6vzSLlx-fDlxbix8Nf3-w"
         gdown.download(id=id, output=output)
@@ -14,17 +13,6 @@ def main(args):
         with ZipFile('ObjectDetectionDataset.zip', 'r') as zipObj:
             zipObj.extractall('')
 
-    # if not os.path.exists('models/saved_models/'):
-    #     os.makedirs('models/saved_models/')
-        
-    # # Download best models
-    # if args.download_models and not os.path.exists('models/saved_models/best_models.zip'):
-    #     output = "models/saved_models/best_models.zip"
-    #     id = "1NbS5UoG9ju39s21MOlZ2AsA8_wFZwLsA"
-    #     gdown.download(id=id, output=output)
-
-    #     with ZipFile('models/saved_models/best_models.zip', 'r') as zipObj:
-    #         zipObj.extractall('models/saved_models/')
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Download data and models for scene recognition.')
