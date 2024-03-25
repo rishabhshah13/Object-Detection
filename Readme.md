@@ -36,7 +36,7 @@ python -m COCO_merger.merge --src "/path/to/output.json" "/path/to/laptops_insta
 Split the dataset into train and test using `cocosplit.py`:
 
 ```bash
-python cocosplit.py --having-annotations --multi-class -s 0.8 DatasetDetectron2/annotations/output.json DatasetDetectron2/annotations/train.json DatasetDetectron2/annotations/test.json
+python cocosplit.py --having-annotations -s 0.8 COCOAnnotations/output.json COCOAnnotations/trainnew.json COCOAnnotations/testnew.json
 ```
 
 ### 1.4. Model Training
