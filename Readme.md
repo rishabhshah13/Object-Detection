@@ -1,9 +1,15 @@
-
----
-
 # Object Detection Pipeline
 
-This repository provides scripts and notebooks to set up and train object detection models using Faster R-CNN (Detectron2) and YOLO.
+This project undertakes a comparative analysis between two prominent object detection models: YOLOv5 and Faster R-CNN (implemented via Detectron2). The main aim was to assess and contrast the performance of these models using a tailored dataset containing images of laptops, drinks, and utensils. Evaluation criteria encompassed mean Average Precision (mAP), inference speed, and model size.
+
+## Overview
+
+### Model Used
+
+- YOLOv5: [GitHub](https://github.com/ultralytics/yolov5)
+- Detectron2 (Faster R-CNN): [GitHub](https://github.com/facebookresearch/detectron2)
+
+Models were trained on RTX 3090
 
 ## 1. Faster R-CNN (Detectron2)
 
@@ -14,7 +20,7 @@ Download the datasets from CVAT in COCO 1.1 format for the following classes:
 - Utensils
 - Laptops
 
-Instructions to download the dataset
+**Instructions to download the dataset:**
 
 Run `python download.py --download_data True`
 
@@ -24,7 +30,6 @@ The files will be named `instances_default.json` for each class. Change the cate
 python -m COCO_merger.merge --src "/path/to/drinks_instances_default.json" "/path/to/utensils_instances_default.json" --out "/path/to/output.json"
 python -m COCO_merger.merge --src "/path/to/output.json" "/path/to/laptops_instances_default.json" --out "/path/to/output.json"
 ```
-
 
 ### 1.2. Annotations and Images
 
@@ -43,7 +48,7 @@ python3 cocosplit.py --having-annotations -s 0.8 COCOAnnotations/output.json COC
 
 Refer to `Detectron2.ipynb` for training on a single dataset and `Detectron2Multiple.ipynb` for training on multiple classes.
 
-## 2. YOLO
+## 2. YOLOv5
 
 ### 2.1. Dataset Creation and Training
 
@@ -54,7 +59,7 @@ Run the cells in the provided notebook to create the dataset from the Faster R-C
 Configure the dataset with the following details:
 - Names: Nothing, Drinks, Utensils, Laptop
 - Number of Classes: 4
-- Paths: 
+- Paths:
     - Training Images: `YOLO_dataset/images/train`
     - Validation Images: `YOLO_dataset/images/test`
 
@@ -63,8 +68,7 @@ Configure the dataset with the following details:
 ### Windows
 
 ```bash
-
-# For all at once (WORKS!)
+# For full installation (WORKS!)
 conda create --prefix "C:\\Users\\rs659\\Desktop\\Object-Detection\\wincondaprojenv" python=3.9
 conda activate "C:\\Users\\rs659\\Desktop\\Object-Detection\\wincondaprojenv"
 pip install gdown cython==3.0.9 numpy==1.23.5 ninja ultralytics==8.1.29 pillow pylabel==0.1.55 kiwisolver==1.4.5 pandas==2.2.1
@@ -75,7 +79,6 @@ pip install git+https://github.com/facebookresearch/detectron2.git
 # For yaml file
 conda env create -f environment.yml
 conda activate object-detection-env
-
 
 # For custom installation
 conda create --prefix "C:\\Users\\rs659\\Desktop\\Object-Detection\\wincondaprojenv" python=3.9
@@ -107,3 +110,10 @@ pip install torchvision
 pip install pybind11
 brew install pybind11
 ```
+
+## Conclusion
+
+YOLO is faster and better than Faster R-CNN. Both YOLOv5 and Detectron2 stand out as formidable tools for object detection, each boasting its own strengths. YOLO demonstrates notably faster processing speeds and cost efficiency, whereas Faster R-CNN excels in performance metrics.
+
+Future Works:
+Increase dataset size, Improve annotations with better criteria for annotations
