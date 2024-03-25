@@ -173,3 +173,4 @@ __MACOSX/*
 /saved_models/*
 yolov*.pt
 ObjectDetectionDataset.zip
+yolo-data/*
